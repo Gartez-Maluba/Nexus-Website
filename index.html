@@ -37,7 +37,7 @@
             display: block;
             margin-bottom: 5px;
         }
-        .form-group input, .form-group select {
+        .form-group input {
             width: 100%;
             padding: 10px;
             border: 1px solid #FFD700;
@@ -59,41 +59,17 @@
 </head>
 <body>
     <div class="header">
-        <img src="./WhatsApp Image 2024-08-01 at 10.18.37.jpeg" alt="Nexus Logo" width="200">
+        <img src="./WhatsApp Image 2024-08-01 at 10.18.37.jpeg" alt="Nexus Logo" style="max-width: 100%; height: auto;">
     </div>
     <div class="form-container">
         <form id="customForm">
-            <div class="form-group">
-                <label for="location">Location</label>
-                <input type="text" id="location" name="location" required>
-            </div>
-            <div class="form-group">
-                <label for="area">Area</label>
-                <input type="text" id="area" name="area" required>
-            </div>
-            <div class="form-group">
-                <label for="product">Product</label>
-                <input type="text" id="product" name="product" required>
-            </div>
-            <div class="form-group">
-                <label for="stockCode">Stock Code</label>
-                <input type="text" id="stockCode" name="stockCode" required>
-            </div>
             <div class="form-group">
                 <label for="operative">Operative</label>
                 <input type="text" id="operative" name="operative" required>
             </div>
             <div class="form-group">
-                <label for="directionOfMovement">Direction of Movement</label>
-                <input type="text" id="directionOfMovement" name="directionOfMovement" required>
-            </div>
-            <div class="form-group">
                 <label for="quantity">Quantity</label>
                 <input type="number" id="quantity" name="quantity" required>
-            </div>
-            <div class="form-group">
-                <label for="remainingStock">Remaining Stock</label>
-                <input type="number" id="remainingStock" name="remainingStock" required>
             </div>
             <div class="form-group">
                 <button type="submit">Submit</button>
@@ -108,14 +84,8 @@
             fetch('https://your-power-automate-flow-url', {
                 method: 'POST',
                 body: JSON.stringify({
-                    location: formData.get('location'),
-                    area: formData.get('area'),
-                    product: formData.get('product'),
-                    stockCode: formData.get('stockCode'),
                     operative: formData.get('operative'),
-                    directionOfMovement: formData.get('directionOfMovement'),
-                    quantity: formData.get('quantity'),
-                    remainingStock: formData.get('remainingStock')
+                    quantity: formData.get('quantity')
                 }),
                 headers: {
                     'Content-Type': 'application/json'
